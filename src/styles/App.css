@@ -1,19 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
 .Contact {
+    display: flex;
+    align-items: center;
     position: relative;
     bottom: 90px;
-    left: 30%;
-    width: 40%;
-    height: 5em;
+    margin: auto;
+    width: fit-content;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 50px;
     border-radius: 10px;
     border-width: 3px;
     background:rgba(109, 78, 180, 0.062);
     box-shadow: 2px 2px 10px rgb(51, 51, 51);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border-style: none;
+    border-style: solid;
+    animation: gradientBorder 800ms ease-in-out infinite;
     background:rgb(221, 221, 221);
     color: black;
+}
+
+@keyframes gradientBorder {
+    0%{
+        border-color: rgb(221, 221, 221);
+    }
+    50%{
+        border-color: rgb(156, 156, 156);
+    }
+    100%{
+        border-color: rgb(221, 221, 221);
+    }
 }
     
 img {
@@ -35,8 +53,6 @@ hr.rounded {
     border-top: 8px solid #bbb;
     border-radius: 5px;
     border-color: rgba(221, 221, 221, 0.308);
-    top: 40px;
-
     }
 
 .ContactOptions {
@@ -94,6 +110,10 @@ hr.rounded {
         
 }
 
+.Content{
+    height: 0;
+}
+
 .MainImage{
     position: relative;
     text-align: right;
@@ -123,38 +143,57 @@ hr.rounded {
 
 .Sophia {
     text-align: center;
-    text-transform: ;
     margin-left: 15px;
-    margin-top: 160px;
     font-size: small;
+    margin-top: 40px;
     font-style: italic;
     color: rgba(221, 221, 221, 0.705);
 }
+
+
+.Terminal {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    border-radius: 10px;
+    height: 70px;
+    width: min-content;
+    display:flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.918);
+}
+
 .Nickname {
+    text-shadow: 2px 0px 5px rgba(221, 221, 221, 0.267);
     display: flex;
+    font-style: italic;
     color: rgb(221, 221 ,221);
     font-family: monospace;
-    max-width: min-content;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid rgba(221, 221, 221, 0.466); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+    margin: auto;
+    max-height: 30px;
+    overflow: hidden; 
+    border-right: .15em solid rgba(221, 221, 221, 0.466);
+    white-space: nowrap;
+    margin: 0 auto; 
+    letter-spacing: .10em;
     animation: 
-    typing 3.5s steps(30, end),
-    blink-caret .5s step-end infinite;
+    typing 2s steps(11, end),
+    blink-caret 500ms step-end infinite;
 }
+
 
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
     }
-    
-    /* The typewriter cursor effect */
-    @keyframes blink-caret {
+
+@keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: rgb(221, 221 ,221, 0.466) }
-    }
+}
 
 h5 {
     font-weight: 200;
@@ -186,10 +225,6 @@ body {
     background-size: 400% 400%;
     animation: gradient 15s ease-in-out infinite;
 
-}
-
-.RodalCSS {
-    justify-content: center;
 }
 
 @keyframes gradient {
