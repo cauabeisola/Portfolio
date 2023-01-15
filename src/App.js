@@ -4,8 +4,34 @@ import Popup from 'reactjs-popup';
 
 const App = () => {
 
+  const [command, setCommand] = useState("")
   const [open, setOpen] = useState(false)
+  const [TerminalContent, setTerminalContent] = useState(["Comandos:", "help - Mostra esta mensagem", "clear - Limpa o terminal", "projects - Mostra projetos feito por Cauã Benigri", "langs - Cita as linguagens de programação conhecidas"])
   const closeModal = () => setOpen(false)
+
+  async function CommandExecution(e){
+    if(e.key == "Enter"){
+      setTimeout(() => {
+        e.target.value = ""
+        if(command == "help"){
+          setTerminalContent(["Comandos:", "help - Mostra esta mensagem", "clear - Limpa o terminal", "projects - Mostra projetos feito por Cauã Benigri", "langs - Cita as linguagens de programação conhecidas"])
+        }
+        else if(command == "clear"){
+          setTerminalContent([""])
+        }
+        else if(command == "projects"){
+          setTerminalContent(["Projetos:", "https://cauabenigri.vercel.app", "https://github.com/cauabeisola/LoginPage", "https://github.com/cauabeisola/Projeto_Reverse_Shell", "https://github.com/cauabeisola/trab", "https://github.com/cauabeisola/Projetos-e-afins"])
+        }
+        else if(command == "langs"){
+          setTerminalContent(["Cursos e linguagens:", "Desenvolvimento de sistemas - Curso técnico", "Python - 120 horas, 3 certificados (Python puro)", "C/C++ - Cursando (Udemy courses)", "JavaScript - Aprendendo"])
+        }
+        else{
+          setTerminalContent(["Erro: Comando não encontrado!"])
+        }
+      }, 100)
+      
+    }
+  }
 
   return (
     <div className="App">
@@ -34,12 +60,29 @@ const App = () => {
               </div>
             </Popup>
         </div>
-        <hr class="rounded"></hr>
-        <div className='Terminal'>
-          <h1 className='Nickname anim-typewriter'>Cauabeisola</h1>
+        <hr className="rounded"></hr>
+        <div className='TerminalBox'>
+          <div className='TerminalLog'>
+            {TerminalContent.map((item) => {
+              if(command == "projects" && item != "Projetos:"){
+                return(
+                  <a href={item} target="_blank" rel="noopener noreferrer" >{item}</a>
+                  )
+              }
+              else{
+              return(
+                <div>{item}</div>
+                )
+            }
+          }
+
+            )}
+          </div>
+          <hr className='TerminalSeparator'></hr>
+          <input placeholder='Digite help para obter a lista de comandos' className='TerminalInput' onKeyDown={CommandExecution} onChange={(e) => {
+            setCommand(e.target.value)
+            }}></input>
         </div>
-        <hr class="rounded"></hr>
-        <h5 className='Sophia'>"O mundo observado é apenas uma aparência; na realidade, nem sequer existe." ~Erwin Schrodinger</h5>
       </div>
   )
 }

@@ -141,48 +141,128 @@ hr.rounded {
     left: 45%;
 }
 
-.Sophia {
-    text-align: center;
-    margin-left: 15px;
-    font-size: small;
-    margin-top: 40px;
-    font-style: italic;
-    color: rgba(221, 221, 221, 0.705);
-}
 
-
-.Terminal {
+.TerminalBox {
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
     position: relative;
     border-radius: 10px;
-    height: 70px;
-    width: min-content;
-    display:flex;
-    padding-left: 20px;
-    padding-right: 20px;
-    align-items: center;
-    background-color: rgba(51, 51, 51, 0.918);
+    height: 30vh;
+    width: 90%;
+    background-color: rgb(51, 51, 51);
+    display:flex
 }
 
-.Nickname {
-    text-shadow: 2px 0px 5px rgba(221, 221, 221, 0.267);
-    display: flex;
-    font-style: italic;
-    color: rgb(221, 221 ,221);
-    font-family: monospace;
-    margin: auto;
-    max-height: 30px;
-    overflow: hidden; 
-    border-right: .15em solid rgba(221, 221, 221, 0.466);
-    white-space: nowrap;
-    margin: 0 auto; 
-    letter-spacing: .10em;
-    animation: 
-    typing 2s steps(11, end),
-    blink-caret 500ms step-end infinite;
+.TerminalInput {
+    margin-top: 25vh;
+    color: rgb(221, 221, 221);
+    border-radius: 15px;
+    padding-left: 20px;
+    width: 100%;
+    background-color: rgba(51, 51, 51);
+    border-style: none;
+    outline: none;
 }
+@media only screen and (max-width: 400px){
+    hr.rounded {
+        width: 95%;
+    }
+
+    .TerminalBox {
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        width: 95%;
+        background-color: rgb(51, 51, 51);
+        display:grid;
+        margin-bottom: 8vh;
+        border: rgb(32, 32, 32) solid 3px;
+    }
+    
+    .TerminalInput {
+        position: fixed;
+        padding-top: 10px;
+        color: rgb(221, 221, 221);
+        border-radius: 15px;
+        padding-left: 20px;
+        width: 88.5%;
+        background-color: rgba(51, 51, 51);
+        border-style: none;
+        outline: none;
+    }
+
+    .TerminalLog {
+        font-size: 10pt;
+        max-height: fit-content;
+        display: grid;
+        align-items:flex-end;
+        margin-bottom: 8vh;
+        padding-left: 20px;
+        color: rgb(221, 221, 221);
+        
+    }
+    hr.TerminalSeparator{
+        position: fixed;
+        margin-top: 24vh;
+        background-color: rgb(32, 32, 32);
+        border-color: rgb(32, 32, 32);
+        border-style: solid;
+        height: 1px;
+        width: 95%;
+    }
+}
+@media only screen and (min-width: 400px){
+    hr.rounded {
+        width: 95%;
+    }
+
+    .TerminalBox {
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        position: relative;
+        border-radius: 10px;
+        height: 45vh;
+        width: 95%;
+        background-color: rgb(51, 51, 51);
+        display:flex;
+        border: rgb(32, 32, 32) solid 3px;
+    }
+    
+    .TerminalInput {
+        position: fixed;
+        margin-top: 41.2vh;
+        color: rgb(221, 221, 221);
+        border-radius: 15px;
+        padding-left: 20px;
+        width: 90%;
+        background-color: rgba(51, 51, 51);
+        border-style: none;
+        outline: none;
+    }
+
+    .TerminalLog {
+        max-height: fit-content;
+        display: grid;
+        align-items:flex-end;
+        margin-bottom: 8vh;
+        padding-left: 20px;
+        color: rgb(221, 221, 221);
+        
+    }
+    hr.TerminalSeparator{
+        position: fixed;
+        margin-top: 39vh;
+        background-color: rgb(32, 32, 32);
+        border-color: rgb(32, 32, 32);
+        border-style: solid;
+        height: 1px;
+        width: 95%;
+    }
+}
+
 
 
 @keyframes typing {
@@ -204,6 +284,9 @@ h3 {
     line-height: 35px;
     font-weight: 500;
 }
+a {
+    color: #bbb;
+}
 html, body {
     position: relative;
     margin: 0;
@@ -221,6 +304,7 @@ html, body {
   }
   
 body {
+    position: fixed;
     background: linear-gradient(-55deg, #c72e2e, #652b8b, #8f0e64, #554fac);
     background-size: 400% 400%;
     animation: gradient 15s ease-in-out infinite;
