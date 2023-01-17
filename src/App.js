@@ -109,6 +109,7 @@ const App = () => {
           <input placeholder='Digite help para obter a lista de comandos' className='TerminalInput' onKeyDownCapture={CommandExecution} onChange={(e) => {
             setCommand(e.target.value)
           }}></input>
+          <h5 className='Version'>Beta v3.1</h5>
         </div>
       </div>
   )

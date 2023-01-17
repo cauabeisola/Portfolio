@@ -47,6 +47,13 @@ img {
     width: 48px;
 }
 
+.Version {
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    color: #6435af;
+    position: fixed;
+    margin-top: 46vh;
+}
+
 hr.rounded {
     position: relative;
     width: 90%;
